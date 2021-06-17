@@ -14,6 +14,8 @@ works.
  * OS: Linux Kubuntu 20.04.2 LTS
  * Rust Version: rustc 1.55.0-nightly (f586d79d1 2021-06-13)
  * Naga Version: 0.4.2
+ * WGPU Version: 0.8.1
+ * Tint Version: commit 52b6a004b8b74ca2750b927bd020fdd8352db4fa
 
 ## Running
 This create is designed to be run with only one of the four possible shader
