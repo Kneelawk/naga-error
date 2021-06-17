@@ -10,14 +10,29 @@ the `src/template.wgsl` file into SPIR-V does produce a functional SPIR-V
 binary. Using `src/template.wgsl` directly in the WGPU render pipeline also
 works.
 
+Using Naga to translate the WGSL source to SPIR-V, either throug the CLI or as a
+library, produces a shader that, when run in this render pipeline, produces a
+blank image that is the same color as the clear color. Non-Naga shader sources,
+when run in this render pipeline, produce a blue triangle in the center of the
+image.
+
 ## System Information
  * OS: Linux Kubuntu 20.04.2 LTS
  * Rust Version: rustc 1.55.0-nightly (f586d79d1 2021-06-13)
  * Naga Version: 0.4.2
  * WGPU Version: 0.8.1
  * Tint Version: commit 52b6a004b8b74ca2750b927bd020fdd8352db4fa
+ * Vulkan Instance Version: 1.2.131
+ * GPU String: GeForce GTX 1060 6GB
 
 ## Running
+When run, this crate will produce an `output.png` file containing the output
+from the WGPU render pipeline. If the `use-naga-lib` feature is enabled, the
+program will also produce a `debug.txt` file containing the debug of the Naga
+Module and ModuleInfo structures created when parsing and validating the
+`src/template.wgsl` file, as well as a `debug.spv` file containing the
+translated, non-functional, SPIR-V binary.
+
 This create is designed to be run with only one of the four possible shader
 provider features enabled. These shader provider features are:
  * `use-naga-lib` - To use Naga as a library for translating WGSL into SPIR-V.
