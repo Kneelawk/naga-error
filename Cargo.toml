@@ -15,6 +15,6 @@ dotenv = "0.15.0"
 env_logger = "0.8.4"
 image = "0.23.14"
 log = "0.4.14"
-naga = { version = "0.4.2", features = ["wgsl-in", "wgsl-out", "glsl-out", "spv-out"], optional = true }
+naga = { git = "https://github.com/gfx-rs/naga.git", branch = "master", features = ["wgsl-in", "wgsl-out", "glsl-out", "spv-out"], optional = true }
 tokio = { version = "1.7.0", features = ["rt", "io-util", "macros", "fs"] }
 wgpu = "0.8.1"

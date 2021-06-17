@@ -408,7 +408,7 @@ dependencies = [
  "khronos-egl",
  "libloading",
  "log",
- "naga",
+ "naga 0.4.2",
  "parking_lot",
  "raw-window-handle",
  "wasm-bindgen",
@@ -431,7 +431,7 @@ dependencies = [
  "gfx-hal",
  "log",
  "metal",
- "naga",
+ "naga 0.4.2",
  "objc",
  "parking_lot",
  "profiling",
@@ -453,7 +453,7 @@ dependencies = [
  "gfx-hal",
  "inplace_it",
  "log",
- "naga",
+ "naga 0.4.2",
  "objc",
  "parking_lot",
  "raw-window-handle",
@@ -468,7 +468,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6d285bfd566f6b9134af908446ca350c0a1047495dfb9bbd826e701e8ee1d259"
 dependencies = [
  "bitflags",
- "naga",
+ "naga 0.4.2",
  "raw-window-handle",
  "thiserror",
 ]
@@ -738,6 +738,22 @@ dependencies = [
 
 [[package]]
 name = "naga"
+version = "0.4.0"
+source = "git+https://github.com/gfx-rs/naga.git?branch=master#efd416d96448d0c749d332b857b67bed3b7fc66e"
+dependencies = [
+ "bit-set",
+ "bitflags",
+ "codespan-reporting",
+ "fxhash",
+ "log",
+ "num-traits",
+ "petgraph",
+ "spirv_headers",
+ "thiserror",
+]
+
+[[package]]
+name = "naga"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c8d74f2c7ace793a760165ac0679d6830809ad4e85f6886f72e4f8c4aa4291c5"
@@ -761,7 +777,7 @@ dependencies = [
  "env_logger",
  "image",
  "log",
- "naga",
+ "naga 0.4.0",
  "tokio",
  "wgpu",
 ]
@@ -1217,7 +1233,7 @@ dependencies = [
  "arrayvec",
  "js-sys",
  "log",
- "naga",
+ "naga 0.4.2",
  "parking_lot",
  "raw-window-handle",
  "smallvec",
@@ -1249,7 +1265,7 @@ dependencies = [
  "gpu-alloc",
  "gpu-descriptor",
  "log",
- "naga",
+ "naga 0.4.2",
  "parking_lot",
  "profiling",
  "raw-window-handle",

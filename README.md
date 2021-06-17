@@ -19,9 +19,9 @@ image.
 ## System Information
  * OS: Linux Kubuntu 20.04.2 LTS
  * Rust Version: rustc 1.55.0-nightly (f586d79d1 2021-06-13)
- * Naga Version: 0.4.2
+ * Naga Version: master#efd416d96448d0c749d332b857b67bed3b7fc66e
  * WGPU Version: 0.8.1
- * Tint Version: commit 52b6a004b8b74ca2750b927bd020fdd8352db4fa
+ * Tint Version: main#52b6a004b8b74ca2750b927bd020fdd8352db4fa
  * Vulkan Instance Version: 1.2.131
  * GPU String: GeForce GTX 1060 6GB
 

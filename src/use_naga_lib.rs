@@ -23,7 +23,7 @@ async fn wgsl_to_spv() -> Vec<u32> {
     let module = front::wgsl::parse_str(TEMPLATE_SOURCE).unwrap();
 
     info!("Validating module...");
-    let mut validator = Validator::new(ValidationFlags::all());
+    let mut validator = Validator::new(ValidationFlags::all(), Default::default());
     let module_info = validator.validate(&module).unwrap();
 
     info!("Writing module as text...");
