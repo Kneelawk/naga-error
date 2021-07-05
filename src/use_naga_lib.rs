@@ -38,7 +38,11 @@ async fn wgsl_to_spv() -> Vec<u32> {
 
     info!("Translating spirv...");
     let mut spirv = vec![];
-    let options = back::spv::Options::default();
+    let options = back::spv::Options {
+        // Don't have `WriterFlags::ADJUST_COORDINATE_SPACE`
+        flags: back::spv::WriterFlags::empty(),
+        ..Default::default()
+    };
     let mut writer = back::spv::Writer::new(&options).unwrap();
     writer.write(&module, &module_info, &mut spirv).unwrap();
 
