@@ -1,4 +1,4 @@
-# naga-error
+# [SOLVED] naga-error
 This crate is designed to demonstrate a circumstance in which Naga is unable to
 translate WGSL into functioning SPIR-V.
 
@@ -15,6 +15,22 @@ library, produces a shader that, when run in this render pipeline, produces a
 blank image that is the same color as the clear color. Non-Naga shader sources,
 when run in this render pipeline, produce a blue triangle in the center of the
 image.
+
+## The Solution
+My issue was caused by WGPU backface culling my triangle. This is because Naga,
+by default translates from WGSL native coordinate-space to SPIR-V native
+coordinate-space when translating WGSL to SPIR-V which involves performing
+Y-flipping. This is why my entire triangle was being backface culled.
+
+To solve this issue remove the `ADJUST_COORDINATE_SPACE` WriterFlag from the
+SPIR-V backend options:
+```rust
+back::spv::Options {
+    // Don't have `WriterFlags::ADJUST_COORDINATE_SPACE`
+    flags: back::spv::WriterFlags::empty(),
+    ..Default::default()
+}
+```
 
 ## System Information
  * OS: Linux Kubuntu 20.04.2 LTS
